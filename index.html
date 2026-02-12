@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mr. Pete's Painting, Carpentry & Maintenence</title>
+    <style>
+        :root{
+            --accent:#39a39f;
+            --bg:#0b0f12;
+            --card:#0f1316;
+            --text:#e6eef0;
+            --muted:#9aa6ab;
+            --shadow: rgba(0,0,0,.6);
+            --input-border: rgba(255,255,255,.06);
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text);transition:background .25s ease,color .25s ease}
+        header{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 20px;background:var(--card);box-shadow:0 1px 6px var(--shadow);position:sticky;top:0;z-index:10}
+        .logo{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:inherit}
+        .logo img{width:128px;height:128px;border-radius:12px}
+        .site-title{font-size:1.8rem;margin:0;font-weight:700;text-align:center}
+        .site-subtitle{font-size:.9rem;color:#666;margin-top:4px;text-align:center}
+        nav{margin-left:auto}
+        nav a{margin-left:14px;color:var(--accent);text-decoration:none;font-weight:600}
+        main{max-width:1100px;margin:28px auto;padding:0 18px}
+        .hero{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+        .hero .intro{background:var(--card);padding:18px;border-radius:8px;flex:1;box-shadow:0 4px 18px var(--shadow)}
+        .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:28px}
+        .ba-card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 6px 20px var(--shadow)}
+        .img-wrapper{display:flex;gap:6px;height:220px;overflow:hidden;border-radius:6px}
+        .img-wrapper img{width:50%;height:100%;object-fit:cover;display:block;border-radius:4px}
+        .pair-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+        .pair-controls .label-before,.pair-controls .label-after{font-size:.95rem;font-weight:600;color:var(--text)}
+        section.contact{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 8px 30px var(--shadow)}
+        form{display:grid;gap:10px}
+        input[type="text"],input[type="email"],textarea{padding:10px;border:1px solid var(--input-border);border-radius:6px;width:100%;font-size:1rem;background:transparent;color:var(--text)}
+        button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:6px;font-weight:600;cursor:pointer}
+        footer{text-align:center;color:var(--muted);font-size:.9rem;margin:22px 0}
+        .pair-controls span{width:38px;text-align:right;font-weight:600;color:var(--text)}
+        small, .muted {color:var(--muted)}
+        @media (max-width:520px){.hero{flex-direction:column}.img-wrapper{height:180px}}
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">
+            <img src="resources/icon.png" alt="Mr. Pete's Painting, Carpentry & Maintenence" role="img" aria-label="Mr. Pete's Painting, Carpentry & Maintenence">
+            <div>
+                <h1 class="site-title">Mr. Pete's Painting</h1>
+                <div class="site-subtitle">Painting, Carpentry & Maintenance — Renovation & Remodeling</div>
+            </div>
+        </a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="intro">
+                <h2 style="margin:0 0 8px 0">Quality contracting. Transparent pricing.</h2>
+                <p style="margin:0;color:var(--muted)">We specialize in home renovations, exterior upgrades, kitchens and bathrooms. View before & afters from recent jobs below, then get in touch for a free estimate.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 style="margin:0 0 12px 0">Before & After</h2>
+            <div class="projects">
+                <!-- Pair 1 -->
+                <div class="ba-card">
+                        <div class="label-pair">Kitchen Remodel</div>
+                        <div class="img-wrapper">
+                            <img src="images/before1.jpg" alt="Kitchen before">
+                            <img src="images/after1.jpg" alt="Kitchen after">
+                        </div>
+                        <div class="pair-controls">
+                            <span class="label-before">Before</span>
+                            <span class="label-after">After</span>
+                        </div>
+                </div>
+
+                <!-- Pair 2 -->
+                <div class="ba-card">
+                    <div class="label-pair">Bathroom Upgrade</div>
+                    <div class="img-wrapper">
+                        <img src="images/before2.jpg" alt="Bath before">
+                        <img src="images/after2.jpg" alt="Bath after">
+                    </div>
+                    <div class="pair-controls">
+                        <span class="label-before">Before</span>
+                        <span class="label-after">After</span>
+                    </div>
+                </div>
+
+                <!-- Pair 3 -->
+                <div class="ba-card">
+                    <div class="label-pair">Exterior Refresh</div>
+                    <div class="img-wrapper">
+                        <img src="images/before3.jpg" alt="Exterior before">
+                        <img src="images/after3.jpg" alt="Exterior after">
+                    </div>
+                    <div class="pair-controls">
+                        <span class="label-before">Before</span>
+                        <span class="label-after">After</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" style="margin-top:22px">
+            <h2 style="margin:0 0 12px 0">Gallery</h2>
+            <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+                <img src="images/gallery1.jpg" alt="Gallery 1" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+                <img src="images/gallery2.jpg" alt="Gallery 2" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+                <img src="images/gallery3.jpg" alt="Gallery 3" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+                <img src="images/gallery4.jpg" alt="Gallery 4" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+            </div>
+        </section>
+
+        <section id="contact" class="contact" style="margin-top:22px">
+            <h2 style="margin:0 0 8px 0">Contact Us</h2>
+            <p style="margin:0 0 12px 0;color:var(--muted)">Fill out the form and we'll get back to you for a free estimate.</p>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Full Name" required />
+                <input type="email" id="email" placeholder="Email address" required />
+                <input type="text" id="phone" placeholder="Phone (optional)" />
+                <textarea id="message" rows="5" placeholder="Brief description of your project" required></textarea>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <button type="submit">Send Inquiry</button>
+                    <small style="color:var(--muted)">Or email: <a href="mailto:contact@mrpetespainting.com">contact@mrpetespainting.com</a></small>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            &copy; <span id="year"></span> Mr. Pete's Painting, Carpentry & Maintenence — All rights reserved
+        </footer>
+    </main>
+
+    <script>
+        // set year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // before/after pairs are shown side-by-side now; slider logic removed
+
+        // simple mailto submit (client-side)
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = encodeURIComponent(document.getElementById('name').value.trim());
+            const email = encodeURIComponent(document.getElementById('email').value.trim());
+            const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+            const msg = encodeURIComponent(document.getElementById('message').value.trim());
+            const subject = encodeURIComponent('Website Inquiry: ' + name);
+            const body = encodeURIComponent('Name: ')+name+'%0D%0A'+encodeURIComponent('Email: ')+email+'%0D%0A'+encodeURIComponent('Phone: ')+phone+'%0D%0A%0D%0A'+msg;
+            window.location.href = 'mailto:contact@mrpetespainting.com?subject='+subject+'&body='+body;
+        });
+    </script>
+</body>
+</html>

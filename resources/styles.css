@@ -1,0 +1,43 @@
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text);transition:background .25s ease,color .25s ease}
+header{display:flex;align-items:center;gap:16px;padding:14px 20px;background:var(--card);box-shadow:0 1px 6px var(--shadow);position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.logo svg{width:44px;height:44px}
+.logo-subtitle{font-size:.85rem;color:var(--muted)}
+h1{font-size:1.1rem;margin:0}
+nav{margin-left:auto}
+nav a{margin-left:14px;color:var(--accent);text-decoration:none;font-weight:600}
+main{max-width:1100px;margin:28px auto;padding:0 18px}
+.hero{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+.hero .intro{background:var(--card);padding:18px;border-radius:8px;flex:1;box-shadow:0 4px 18px var(--shadow)}
+.hero .intro h2{margin:0 0 8px 0}
+.hero .intro p{margin:0;color:var(--muted)}
+.aside-info{min-width:220px;text-align:center}
+.card-small{background:var(--card);padding:10px;border-radius:8px;box-shadow:0 6px 18px var(--shadow)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:28px}
+.ba-card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 6px 20px var(--shadow)}
+.img-wrapper{position:relative;height:220px;overflow:hidden;border-radius:6px}
+.img-wrapper img{width:100%;height:100%;object-fit:cover;display:block}
+.img-wrapper img.after{position:absolute;top:0;left:0;width:50%;height:100%}
+.pair-controls{display:flex;align-items:center;gap:8px;margin-top:10px}
+.pair-controls input[type="range"]{flex:1}
+.pair-controls span{width:38px;text-align:right;font-weight:600;color:var(--text)}
+.label-pair{font-size:.95rem;font-weight:600;color:var(--text)}
+section.contact{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 8px 30px var(--shadow);margin-top:22px}
+.form-actions{display:flex;gap:8px;align-items:center}
+form{display:grid;gap:10px}
+input[type="text"],input[type="email"],textarea{padding:10px;border:1px solid var(--input-border);border-radius:6px;width:100%;font-size:1rem;background:transparent;color:var(--text)}
+button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:6px;font-weight:600;cursor:pointer}
+footer{text-align:center;color:var(--muted);font-size:.9rem;margin:22px 0}
+small, .muted {color:var(--muted)}
+/* logo svg parts */
+.logo svg .logo-rect{fill:var(--accent)}
+.logo svg .logo-path{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:520px){.hero{flex-direction:column}.img-wrapper{height:180px}}
+
+/* helper rules */
+.section-title{margin:0 0 12px 0}
+.card-small strong{display:block;font-size:1.4rem;color:var(--accent)}
+.card-small span{color:var(--muted);font-size:.9rem}
+.contact p{margin:0 0 12px 0;color:var(--muted)}
