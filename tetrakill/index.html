@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tetrakill - Introduction</title>
+    <link rel="stylesheet" href="resources/styles.css" />
+    <style>
+        :root{
+            --accent:#9370DB;
+            --bg:#0b0f12;
+            --card:#0f1316;
+            --text:#e6eef0;
+            --muted:#9aa6ab;
+            --shadow: rgba(0,0,0,.6);
+            --input-border: rgba(255,255,255,.06);
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;overflow-x:hidden}
+        body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(135deg,var(--bg) 0%,#1a1d23 100%);color:var(--text);transition:background .25s ease,color .25s ease;overscroll-behavior-x:none;position:relative;overflow-x:hidden}
+        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 20% 80%, rgba(147,112,219,0.1) 0%, transparent 50%),radial-gradient(circle at 80% 20%, rgba(147,112,219,0.1) 0%, transparent 50%),radial-gradient(circle at 40% 40%, rgba(147,112,219,0.05) 0%, transparent 50%);pointer-events:none;z-index:-1}
+        .title-image{display:block;width:100%;max-width:800px;margin:20px auto;text-align:center}
+        main{max-width:1200px;margin:28px auto;padding:0 18px}
+        .hero{text-align:center;margin-bottom:40px}
+        .hero h1{font-size:3rem;margin-bottom:10px}
+        .hero p{font-size:1.2rem;color:var(--muted);margin-bottom:20px}
+        .play-button{display:inline-block;background:linear-gradient(135deg,var(--accent),#BA55D3);color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1.3rem;transition:all 0.3s ease;box-shadow:0 6px 20px rgba(147,112,219,0.3);border:2px solid transparent;position:relative;overflow:hidden}
+        .play-button:hover{background:linear-gradient(135deg,#4B0082,var(--accent));transform:translateY(-3px);box-shadow:0 10px 30px rgba(147,112,219,0.5)}
+        .play-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.5s}
+        .play-button:hover::before{left:100%}
+        section{margin-bottom:40px}
+        section h2{font-size:2rem;margin-bottom:20px;border-bottom:2px solid var(--accent);padding-bottom:10px}
+        section p{line-height:1.6}
+        .tutorial ul{list-style-type:disc;padding-left:20px}
+        .tutorial li{margin-bottom:10px}
+        .tutorial-img {display: block; margin: 0 auto;border-radius: 12px;}
+        .patch-history ul{list-style-type:none;padding:0}
+        .patch-history ul ul {list-style-type:disc;padding-left: 30px;}
+        .patch-history li{margin-bottom:15px;padding:10px;background:var(--card);border-radius:8px}
+        .patch-history ul ul li {padding: 0px; background:var(--card);}
+        .patch-history .version{font-weight:600;color:var(--accent)}
+        footer{text-align:center;color:var(--muted);font-size:.9rem;margin:40px 0}
+    </style>
+</head>
+<body>
+    <img src="resources/title.png" alt="Tetrakill Title" class="title-image">
+
+    <main>
+        <section class="hero">
+            <a href="play.html" class="play-button">Play Tetrakill</a>
+        </section>
+
+        <section id="about">
+            <h2>About the Game</h2>
+            <p>
+                Tetrakill is a twist on Tetris that pits the player against a variety of computer controlled enemies. I came up with the idea from this game when looking at player versus player Tetris games and wondered what new mechanics 
+                could be introduced to that would add different strategies. I decided that a single player experience where your opponent has access to a variety of abilities that a normal player wouldn't have opens up many possibilities for 
+                interesting interactions. 
+            </p>
+            <p>
+                The plan for this game is for there to be a full campaign mode where you will battle against a series of enemies, gather upgrades and skills that the player can use in battle, player-selected difficulty modifiers
+                to adapt the games difficulty to each players skill level, online leaderboards and more.
+            </p>
+            <p>
+                In the first release of the demo the game features a preview of what the battle system will look like. There is a sampling of enemies types for you to challenge, each with their own stats and abilities. I hope that you will
+                find interesting ways to interact with the game and formulate new strategies. Note: game progress is currently being saved in the browser's local storage, so clearing your cache will reset your progress.
+            </p>
+            <p>Thanks for trying the game, hope you enjoy and let me know your thoughts!</p>
+        </section>
+
+        <section id="tutorial" class="tutorial">
+            <h2>Tutorial</h2>
+            <p>Click the "Play" button to open the gamemode selection menu. You can select from either battles or challenges. Battles are the main mode of Tetrakill where you will face off against computer opponenet. Challenges on the other hand
+                are the traditional Tetris gameplay your familiar with along side an additional score tracker for you to compete against yourself or others.
+            </p>
+            <h3>Battle Menu</h3>
+            <img src="resources/battle_menu.png" alt="Battle menu screenshot" class="tutorial-img">
+            <p>In the battle menu you can select from 4 different enemy classes to fight against at 4 different difficulty levels.</p>
+            <p>When an enemy is selected you can see a preview of their stats and the abilities that they have. In the screenshot, the enemy has 75 health, 25 speed and 1 skill shown in the skill bar. Each of these elements can be hovered to show more information.</p>
+            <img src="resources/skill_types.png" alt="Skill types screenshot" class="tutorial-img">
+            <p>There are 3 types of skills in Tetrakill:</p>
+            <ul>
+                <li><strong>Active:</strong> Triggered right away when the enemy uses them.</li>
+                <li><strong>Attack:</strong> Generally skills that will add pieces to your board. They only trigger after you place a piece down and only if you <strong>DON'T</strong> clear a line with said piece. Only one attack skill can trigger at a time, any remaining ones will stay queued until you use your next piece.</li>
+                <li><strong>Passive:</strong> Skills that are always in effect.</li>
+            </ul>
+            <h3>In Battle</h3>
+            <img src="resources/battle_preview.png" alt="Battle preview screenshot" class="tutorial-img">
+            <p>
+                While in battle, you can see your board on the left side of the screen and the enemy on the right side.
+            </p>
+            <ul>
+                <li>At the top left of your board is the bag which allows you to store a piece for later use or swap your current piece with the piece in the bag.</li>
+                <li>The top right shows a preview of the upcoming pieces while the bottom right shows a danger bar to signify incoming <strong>Attack</strong> skills</li>
+                <li>Above the enemy is the symbol of the skill that was just used against you.</li>
+                <li>Below the enemy is the health bar. Bring this down to 0 to win.</li>
+                <li>Below the health bar is the speed bar. This will continuously fill up and when full, the enemy will use a skill from its skill pool.</li>
+            </ul>
+            <h3>Controls</h3>
+            <ul>
+                <li><strong>Move Piece:</strong> The piece can be moved left, right and down using the <strong>arrow keys</strong>.</li>
+                <li><strong>Rotate:</strong> To rotate the piece, use the <strong>Z key</strong> for counter-clockwise rotation and the <strong>X key</strong> for clockwise rotation.</li>
+                <li><strong>Hard Drop:</strong> Drop the piece instantly by pressing the <strong>spacebar</strong>.</li>
+                <li><strong>Bag:</strong> To bag your current piece or swap it with the piece in the bag, press the <strong>C key</strong>.</li>
+                <li><strong>Pause:</strong> You can pause the game using the <strong>Escape key</strong>.</li>
+                <li><strong>Fast Reset:</strong> You can quickly reset the game using the <strong>R key</strong>.</li>
+            </ul>
+            <p>All controls and game sensitivity can be edited in the settings menu.</p>
+        </section>
+
+        <section id="patch-history" class="patch-history">
+            <h2>Version History</h2>
+            <ul>
+                <li>
+                    <div class="version">v0.1.0 - March 8th, 2026</div>
+                    <p>Initial release of the Tetrakill demo, featuring a preview of the core "battle" mode.</p>
+                    <ul>
+                        <li>Battle against 4 unique enemy classes at 4 difficulty levels. That's a total of 16 enemy variations with unique animations and behaviors.</li>
+                        <li>Enemies will utilize skills from a pool of 11 different abilities to use against you</li>
+                        <li>Practice your skills or chase highscores in 6 different challenge modes</li>
+                        <li>Customize your games look with 16 block skins, 5 ghost skins and 5 hard drop trail skins</li>
+                        <li>14 total achievements to obtain in various gamemodes</li>
+                        <li>Customizable audio levels, keybindings, and sensitivity settings</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; Created by HundredArms 2026
+    </footer>
+</body>
+</html>
