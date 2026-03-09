@@ -21,7 +21,7 @@
         body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 20% 80%, rgba(147,112,219,0.1) 0%, transparent 50%),radial-gradient(circle at 80% 20%, rgba(147,112,219,0.1) 0%, transparent 50%),radial-gradient(circle at 40% 40%, rgba(147,112,219,0.05) 0%, transparent 50%);pointer-events:none;z-index:-1}
         .title-image{display:block;width:100%;max-width:800px;margin:20px auto;text-align:center}
         main{max-width:1200px;margin:28px auto;padding:0 18px}
-        .hero{text-align:center;margin-bottom:40px}
+        .hero{text-align:center;margin-bottom:40px;display: flex;justify-content: center;gap: 150px; }
         .hero h1{font-size:3rem;margin-bottom:10px}
         .hero p{font-size:1.2rem;color:var(--muted);margin-bottom:20px}
         .play-button{display:inline-block;background:linear-gradient(135deg,var(--accent),#BA55D3);color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1.3rem;transition:all 0.3s ease;box-shadow:0 6px 20px rgba(147,112,219,0.3);border:2px solid transparent;position:relative;overflow:hidden}
@@ -66,6 +66,10 @@
                 find interesting ways to interact with the game and formulate new strategies. Note: game progress is currently being saved in the browser's local storage, so clearing your cache will reset your progress.
             </p>
             <p>Thanks for trying the game, hope you enjoy and let me know your thoughts!</p>
+            <section class="hero">
+                <a href="https://forms.gle/FD23LzrtFcQAzgH59" target="_blank" class="play-button">Report an issue</a>
+                <a href="https://forms.gle/VJad7514T6iXy2an7" target="_blank" class="play-button">Submit feedback</a>
+            </section>
         </section>
 
         <section id="tutorial" class="tutorial">
@@ -95,6 +99,15 @@
                 <li>Above the enemy is the symbol of the skill that was just used against you.</li>
                 <li>Below the enemy is the health bar. Bring this down to 0 to win.</li>
                 <li>Below the health bar is the speed bar. This will continuously fill up and when full, the enemy will use a skill from its skill pool.</li>
+            </ul>
+            <h3>Damage Calculation</h3>
+            <ul>
+                <li><strong>Single Line:</strong> 1 damage</li>
+                <li><strong>Double Line:</strong> 3 damage</li>
+                <li><strong>Triple Line:</strong> 5 damage</li>
+                <li><strong>Tetra:</strong> 10 damage</li>
+                <li><strong>Spin Move:</strong> Multiplies damage by 1.5</li>
+                <li><strong>Combos:</strong> +1 damage per consecutive lines cleared after 2 consecutive lines</li>
             </ul>
             <h3>Controls</h3>
             <ul>
@@ -129,7 +142,7 @@
     </main>
 
     <footer>
-        &copy; Created by HundredArms 2026
+        Created by HundredArms 2026
     </footer>
 </body>
 </html>
